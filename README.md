@@ -1,14 +1,14 @@
-# Gas Town
+# Gas Town 2
 
 **Multi-agent orchestration system for Claude Code with persistent work tracking**
 
 ## Overview
 
-Gas Town is a workspace manager that lets you coordinate multiple Claude Code agents working on different tasks. Instead of losing context when agents restart, Gas Town persists work state in git-backed hooks, enabling reliable multi-agent workflows.
+Gas Town 2 is a workspace manager that lets you coordinate multiple Claude Code agents working on different tasks. Instead of losing context when agents restart, Gas Town 2 persists work state in git-backed hooks, enabling reliable multi-agent workflows.
 
 ### What Problem Does This Solve?
 
-| Challenge                       | Gas Town Solution                            |
+| Challenge                       | Gas Town 2 Solution                            |
 | ------------------------------- | -------------------------------------------- |
 | Agents lose context on restart  | Work persists in git-backed hooks            |
 | Manual agent coordination       | Built-in mailboxes, identities, and handoffs |
@@ -79,7 +79,7 @@ Git-backed issue tracking system that stores work state as structured data.
 
 **Bead IDs** (also called **issue IDs**) use a prefix + 5-character alphanumeric format (e.g., `gt-abc12`, `hq-x7k2m`). The prefix indicates the item's origin or rig. Commands like `gt sling` and `gt convoy` accept these IDs to reference specific work items. The terms "bead" and "issue" are used interchangeably—beads are the underlying data format, while issues are the work items stored as beads.
 
-> **New to Gas Town?** See the [Glossary](docs/glossary.md) for a complete guide to terminology and concepts.
+> **New to Gas Town 2 2?** See the [Glossary](docs/glossary.md) for a complete guide to terminology and concepts.
 
 ## Installation
 
@@ -96,7 +96,7 @@ Git-backed issue tracking system that stores work state as structured data.
 ### Setup
 
 ```bash
-# Install Gas Town
+# Install Gas Town 2 2
 go install github.com/steveyegge/gastown/cmd/gt@latest
 
 # Add Go binaries to PATH (add to ~/.zshrc or ~/.bashrc)
@@ -200,7 +200,7 @@ gt convoy list
 
 ### Minimal Mode (No Tmux)
 
-Run individual runtime instances manually. Gas Town just tracks state.
+Run individual runtime instances manually. Gas Town 2 2 just tracks state.
 
 ```bash
 gt convoy create "Fix bugs" gt-abc12   # Create convoy (sling auto-creates if skipped)
@@ -290,7 +290,7 @@ gt convoy show
 
 ## Runtime Configuration
 
-Gas Town supports multiple AI coding runtimes. Per-rig runtime settings are in `settings/config.json`.
+Gas Town 2 2 supports multiple AI coding runtimes. Per-rig runtime settings are in `settings/config.json`.
 
 ```json
 {
@@ -308,7 +308,7 @@ Gas Town supports multiple AI coding runtimes. Per-rig runtime settings are in `
 - Claude uses hooks in `.claude/settings.json` for mail injection and startup.
 - For Codex, set `project_doc_fallback_filenames = ["CLAUDE.md"]` in
   `~/.codex/config.toml` so role instructions are picked up.
-- For runtimes without hooks (e.g., Codex), Gas Town sends a startup fallback
+- For runtimes without hooks (e.g., Codex), Gas Town 2 2 sends a startup fallback
   after the session is ready: `gt prime`, optional `gt mail check --inject`
   for autonomous roles, and `gt nudge deacon session-started`.
 
@@ -370,11 +370,11 @@ bd mol list                 # List active instances
 
 ## Cooking Formulas
 
-Gas Town includes built-in formulas for common workflows. See `.beads/formulas/` for available recipes.
+Gas Town 2 2 includes built-in formulas for common workflows. See `.beads/formulas/` for available recipes.
 
 ## Dashboard
 
-Gas Town includes a web dashboard for monitoring:
+Gas Town 2 2 includes a web dashboard for monitoring:
 
 ```bash
 # Start dashboard
@@ -395,7 +395,7 @@ Features:
 
 ### The Propulsion Principle
 
-Gas Town uses git hooks as a propulsion mechanism. Each hook is a git worktree with:
+Gas Town 2 2 uses git hooks as a propulsion mechanism. Each hook is a git worktree with:
 
 1. **Persistent state** - Work survives agent restarts
 2. **Version control** - All changes tracked in git
